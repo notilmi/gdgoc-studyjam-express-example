@@ -23,8 +23,8 @@ This API provides basic CRUD (Create, Read, Update, Delete) operations for manag
 1.  Clone the repository:
 
     ```bash
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/notilmi/gdgoc-studyjam-express-example
+    cd gdgoc-studyjam-express-example
     ```
 
 2.  Install the dependencies:
