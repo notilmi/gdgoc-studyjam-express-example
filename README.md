@@ -51,3 +51,8 @@ To start the server, use the following command:
 
 ```bash
 npm run start
+```
+
+### API Output Sample
+
+- [Postman Collection](https://warped-station-385773.postman.co/workspace/Workspace-1~bc8e11b5-c67a-45c8-9eef-e943c6276114/collection/29725546-0d1a93f8-c7be-4ada-ba16-1fbe9bcecff1?action=share&creator=29725546)
