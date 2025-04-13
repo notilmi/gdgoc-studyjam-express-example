@@ -1,11 +1,13 @@
 import express, { Response } from "express";
 import { todoRouter } from "./routes/todo/route";
-
+import { authRoutes } from "./routes/auth/route";
+import cookieParser from "cookie-parser";
 const PORT = process.env.PORT ?? 3000;
 
 const server = express();
 
 server.use(express.json());
+server.use(cookieParser());
 
 server.get("/", (_, res: Response) => {
   res.json({
@@ -16,7 +18,9 @@ server.get("/", (_, res: Response) => {
     },
   });
 });
+
 server.use("/todos", todoRouter);
+server.use("/auth", authRoutes);
 
 server.listen(PORT, () => {
   console.log(`🚀 App listening on port: ${PORT}`);

@@ -23,3 +23,18 @@ model Todo {
 
   @@map("todo")
 }
+
+model User {
+  id String @id @unique @default(uuid())
+
+  username String
+  password String
+  salt     String
+
+  isAdmin Boolean @default(false)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("user")
+}
