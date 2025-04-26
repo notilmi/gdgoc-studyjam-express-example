@@ -5,11 +5,12 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "80:80"
     environment:
       - AUTH_SECRET=GDGOCSTUDYJAM2025
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/todo_app
       - NODE_ENV=production
+      - PORT=80
     depends_on:
       - db
     restart: unless-stopped

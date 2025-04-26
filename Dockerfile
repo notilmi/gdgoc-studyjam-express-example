@@ -37,7 +37,7 @@ COPY --from=builder /app/src ./src
 COPY --from=builder /app/prisma ./prisma
 
 # Expose the port your app runs on
-EXPOSE 3000
+EXPOSE 80
 
 # Start the application
 CMD ["pnpm", "start"]
