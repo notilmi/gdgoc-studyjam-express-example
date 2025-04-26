@@ -25,7 +25,7 @@ export const authenticate = async (
       req.cookies?.token || req.headers.authorization?.split(" ")[1];
 
     if (!token) {
-      return res.status(StatusCodes.UNAUTHORIZED).json({
+      res.status(StatusCodes.UNAUTHORIZED).json({
         message: "Authentication required",
       });
     }
@@ -34,12 +34,13 @@ export const authenticate = async (
     const sessionResult = await getSession(token);
 
     if (sessionResult.isErr()) {
-      return res.status(sessionResult.error.status).json({
+      res.status(sessionResult.error.status).json({
         message: sessionResult.error.message,
       });
     }
 
     // Attach user to request
+    // @ts-expect-error This is a workaround for TypeScript due to Expressjs not recognizing the user property
     req.user = sessionResult.value.user;
     next();
   } catch (error) {
